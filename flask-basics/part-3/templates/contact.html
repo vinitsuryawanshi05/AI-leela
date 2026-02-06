@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Flask Jinja2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 { color: #2d3748; }
+        nav {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #edf2f7;
+            border-radius: 5px;
+        }
+        nav a {
+            margin-right: 15px;
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover { color: #2b6cb0; }
+        .info-box {
+            background: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .info-box p {
+            font-size: 18px;
+        }
+        strong {
+            color: #2b6cb0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/profile">Profile</a>
+            <a href="/skills">Skills</a>
+            <a href="/projects">Projects</a>
+            <a href="/contact">Contact</a>
+        </nav>
+
+        <h1>Contact Page 📞</h1>
+
+        <p>This page shows how we pass a <strong>dictionary</strong> from Python to HTML.</p>
+
+        <div class="info-box">
+            <p>📧 <strong>Email:</strong> {{ contact.email }}</p>
+            <p>📱 <strong>Phone:</strong> {{ contact.phone }}</p>
+            <p>📍 <strong>City:</strong> {{ contact.city }}</p>
+        </div>
+
+        <p style="margin-top:20px;">
+            Data aa raha hai Flask se using <code>render_template()</code> 🔥
+        </p>
+
+    </div>
+</body>
+</html>

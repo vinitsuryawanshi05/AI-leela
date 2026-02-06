@@ -32,6 +32,15 @@ def profile():
                            course=user_data['course'],
                            is_enrolled=user_data['is_enrolled'])
 
+@app.route('/contact')
+def contact():
+    contact_info = {
+        'email': 'alex@example.com',
+        'phone': '+91 9876543210',
+        'city': 'Mumbai'
+    }
+    return render_template('contact.html', contact=contact_info)
+
 
 @app.route('/skills')
 def skills():

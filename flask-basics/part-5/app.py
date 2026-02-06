@@ -18,12 +18,12 @@ app = Flask(__name__)
 # =============================================================================
 
 PERSONAL_INFO = {
-    'name': 'Your Name',
+    'name': 'Vinit Suryawanshi',
     'title': 'Web Developer',
     'bio': 'A passionate developer learning Flask and web development.',
-    'email': 'your.email@example.com',
-    'github': 'https://github.com/yourusername',
-    'linkedin': 'https://linkedin.com/in/yourusername',
+    'email': 'vinitsuryawanshi@gmail.com',
+    'github': 'https://github.com/vinitsuryawanshi05',
+    'linkedin': 'https://linkedin.com/in/vinitsuryawanshi',
 }
 
 SKILLS = [
@@ -36,8 +36,8 @@ SKILLS = [
 
 PROJECTS = [
     {'id': 1, 'name': 'Personal Website', 'description': 'A Flask-powered personal portfolio website.', 'tech': ['Python', 'Flask', 'HTML', 'CSS'], 'status': 'Completed'},
-    {'id': 2, 'name': 'Todo App', 'description': 'A simple task management application.', 'tech': ['Python', 'Flask', 'SQLite'], 'status': 'In Progress'},
-    {'id': 3, 'name': 'Weather Dashboard', 'description': 'Display weather data from an API.', 'tech': ['Python', 'Flask', 'API'], 'status': 'Planned'},
+    {'id': 2, 'name': 'Result Analyzer', 'description': 'A simple task management application.', 'tech': ['Python', 'Flask', 'SQLite'], 'status': 'In Progress'},
+    {'id': 3, 'name': 'Green Scan', 'description': 'Display Trees data from an API.', 'tech': ['Python', 'Flask', 'API'], 'status': 'Planned'},
 ]
 
 

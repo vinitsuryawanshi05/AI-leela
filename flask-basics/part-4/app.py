@@ -42,6 +42,36 @@ def user_post(username, post_id):
 def about():
     return render_template('about.html')
 
+@app.route('/product/<int:product_id>')
+def product(product_id):
+
+    products = {
+        1: {"name": "Laptop", "price": 55000, "brand": "HP"},
+        2: {"name": "Smartphone", "price": 25000, "brand": "Samsung"},
+        3: {"name": "Headphones", "price": 3000, "brand": "Boat"},
+        4: {"name": "Smart Watch", "price": 7000, "brand": "Noise"},
+    }
+
+    product = products.get(product_id)
+
+    return render_template("product.html", product_id=product_id, product=product)
+
+@app.route('/category/<category_name>/product/<int:product_id>')
+def category_product(category_name, product_id):
+
+    products = {
+        1: {"name": "Laptop", "price": 55000},
+        2: {"name": "Mobile", "price": 25000},
+        3: {"name": "Headphones", "price": 3000},
+    }
+
+    product = products.get(product_id)
+
+    return render_template("category_product.html",
+                           category=category_name,
+                           product_id=product_id,
+                           product=product)
+
 
 @app.route('/links')  # Demonstrates url_for() - generates URLs dynamically (better than hardcoding!)
 def show_links():

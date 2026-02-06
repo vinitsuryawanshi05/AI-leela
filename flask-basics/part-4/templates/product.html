@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        nav {
+            margin-bottom: 20px;
+            padding: 12px;
+            background: #edf2f7;
+            border-radius: 8px;
+        }
+        nav a {
+            margin-right: 15px;
+            color: #2d3748;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #2b6cb0;
+        }
+
+        h1 {
+            color: #2b6cb0;
+        }
+
+        .product-box {
+            background: #ebf8ff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #3182ce;
+            margin-top: 20px;
+        }
+
+        .product-box h2 {
+            margin: 0;
+            color: #2d3748;
+        }
+
+        .product-box p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #4a5568;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: green;
+        }
+
+        .notfound {
+            background: #fff5f5;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid red;
+            margin-top: 20px;
+        }
+
+        .notfound h2 {
+            margin: 0;
+            color: red;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: #2b6cb0;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #1a4f80;
+        }
+
+        ul {
+            margin-top: 15px;
+        }
+
+        ul li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/links">Links</a>
+        </nav>
+
+        <h1>Product Details</h1>
+
+        {% if product %}
+            <div class="product-box">
+                <h2>{{ product.name }}</h2>
+                <p><b>Brand:</b> {{ product.brand }}</p>
+                <p><b>Product ID:</b> {{ product_id }}</p>
+                <p class="price">Price: ₹{{ product.price }}</p>
+
+                <a class="btn" href="/links">Go to Links</a>
+            </div>
+
+        {% else %}
+            <div class="notfound">
+                <h2>Product Not Found ❌</h2>
+                <p>Sorry! Product with ID <b>{{ product_id }}</b> does not exist.</p>
+
+                <p>Try these available products:</p>
+                <ul>
+                    <li><a href="/product/1">Product 1</a></li>
+                    <li><a href="/product/2">Product 2</a></li>
+                    <li><a href="/product/3">Product 3</a></li>
+                    <li><a href="/product/4">Product 4</a></li>
+                </ul>
+            </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>
