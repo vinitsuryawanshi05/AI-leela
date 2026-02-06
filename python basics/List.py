@@ -23,7 +23,7 @@ courses.append(new)
 print(courses)
 
 print(courses[-1])
-
+#Hii
 # The last 4 words are important in above definition - ELEMENTS FROM THE ITERABLE. ITERABLE in this case is thew new list that we are passing (see the first argument being passed to the function definiion)
 # In other words, extend actually unpacks the other list and adds items to the original list instead of creating a nested list by simply inserting one list into the other
 
