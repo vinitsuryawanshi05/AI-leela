@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>📌 All Tasks</h2>
+
+{% for task in tasks %}
+    <div class="task">
+        <h3>{{ task.title | upper }}</h3>
+
+        <p>Status:
+            {% if task.status == 'Completed' %}
+                ✅ Completed
+            {% elif task.status == 'In Progress' %}
+                🔄 In Progress
+            {% else %}
+                ⏳ Pending
+            {% endif %}
+        </p>
+
+        <p>Priority:
+            {% if task.priority == 'High' %}
+                <span class="high">{{ task.priority }}</span>
+            {% elif task.priority == 'Medium' %}
+                <span class="medium">{{ task.priority }}</span>
+            {% else %}
+                <span class="low">{{ task.priority }}</span>
+            {% endif %}
+        </p>
+
+        <a href="/task/{{ task.id }}">View Details</a>
+    </div>
+{% endfor %}
+
+{% endblock %}

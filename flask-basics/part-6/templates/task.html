@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if task %}
+    <h2>📌 Task Details</h2>
+
+    <div class="task">
+        <h3>{{ task.title }}</h3>
+        <p><b>ID:</b> {{ task.id }}</p>
+        <p><b>Status:</b> {{ task.status }}</p>
+        <p><b>Priority:</b> {{ task.priority }}</p>
+    </div>
+{% else %}
+    <h2>❌ Task Not Found</h2>
+    <p>No task exists with ID: {{ task_id }}</p>
+{% endif %}
+
+{% endblock %}
